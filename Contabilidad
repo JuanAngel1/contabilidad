@@ -1,0 +1,1012 @@
+from sys import int_info
+
+
+print("SISTEMA DE PRESUPUESTO MAESTRO")
+print("Debemos crear un usuario y contraseña")
+print("")
+usuario = input("Creacion de usuario, ingresa un nombre: ")
+print("")
+contraseña = input("Creacion de contraseña, ingresa una contraseña: ")
+print("")
+print("USUARIO CREADO CORRECTAMENTE")
+print("")
+
+print(f"Tu usuario es {usuario}, ingresa tu contraseña")
+contra = input("Contraseña: ")
+
+programa = True
+
+
+while programa:
+    if contra == contraseña:
+        print("USUARIO ACEPTADO")
+        print("")
+        print("Iniciaremos el proceso de presupuesto maestro")
+        print("")
+        print("""PRESUPUESTO DE OPERACION
+        PRESUPUESTO DE VENTAS""")
+        print("")
+        print("1 semestre")
+        print("Producto 1")
+        unidades_vender = int(input("Ingresa las unidades a vender en el 1 semestre: "))
+        precio_venta = int(input("Ingresa el precio de venta: "))
+        importe = (unidades_vender * precio_venta)
+        print(f"El total de importe de venta es {importe}")
+        print("")
+        print("Proseguimos con el 2 semestre")
+        print("")
+        unidades_vender2 = int(input("Ingresa las unidades a vender en el 2 semestre: "))
+        precio_venta2 = int(input("Ingresa el precio de venta: "))
+        importe2 = (unidades_vender2 * precio_venta2)
+        print(f"El total de importe de venta es {importe2}")
+        print("")
+        print(f"El total de importe de venta del primer producto es: {importe + importe2}")
+        print("")
+        print("Proseguimos con el siguiente producto")
+        print("Producto 2")
+        unidades_vender3 = int(input("Ingresa las unidades a vender en el 1 semestre: "))
+        precio_venta3 = int(input("Ingresa el precio de venta: "))
+        importe3 = (unidades_vender3 * precio_venta3)
+        print(f"El total de importe de venta es {importe3}")
+        print("")
+        print("Proseguimos con el 2 semestre")
+        print("")
+        unidades_vender4 = int(input("Ingresa las unidades a vender en el 2 semestre: "))
+        precio_venta4 = int(input("Ingresa el precio de venta: "))
+        importe4 = (unidades_vender4 * precio_venta4)
+        print(f"El total de importe de venta es {importe4}")
+        print("")
+        print(f"El total de importe de venta del segundo producto es: {importe3 + importe4}")
+        print("")
+        print("Proseguimos con el siguiente producto")
+        print("Producto 3")
+        unidades_vender5 = int(input("Ingresa las unidades a vender en el 1 semestre: "))
+        precio_venta5 = int(input("Ingresa el precio de venta: "))
+        importe5 = (unidades_vender5 * precio_venta5)
+        print(f"El total de importe de venta es {importe5}")
+        print("")
+        print("Proseguimos con el 2 semestre")
+        print("")
+        unidades_vender6 = int(input("Ingresa las unidades a vender en el 2 semestre: "))
+        precio_venta6 = int(input("Ingresa el precio de venta: "))
+        importe6 = (unidades_vender6 * precio_venta6)
+        print(f"El total de importe de venta es {importe6}")
+        print("")
+        print(f"El total de importe de venta del tercer producto es: {importe5 + importe6}")
+        print("")
+        print("TOTAL DE VENTAS POR SEMESTRE")
+        print(f"El total de ventas el 1 semestre de los 3 productos es: {importe+ importe3+importe5}")
+        print("")
+        print(f"El total de ventas el 2 semestre de los 3 productos en el año 2016 es: {importe2+importe4+importe6}")
+        print("")
+        print(f"El total de ventas de los 2 semestre es: {importe+importe2+importe3+importe4+importe5+importe6} ")
+        print("*******************************************************************************************************")
+        print("*******************************************************************************************************")
+        
+        print("2.-Determinacion del saldo de cliente y flujo de entradas")
+        saldo_cliente = int(input("Ingresa el saldo total de cliente al 31-dic-2015: "))
+        total2016 = importe+importe2+importe3+importe4+importe5+importe6
+        print(f"El total de ventas en el año 2016 es: {total2016} ")
+        total_1 = saldo_cliente+total2016
+        print(f"El total de cliente 2016 es : {total_1}")
+        print("")
+        print("Entradas de efectivo: ")
+        print(f"Por cobranza del 2015: {saldo_cliente}")
+        cobranza= total2016 * 0.8
+        print(f"Por cobranza del 2016: {cobranza}")
+        total_entradas = saldo_cliente + cobranza
+        print(f"El total de entradas del 2016 es: {total_entradas} ")
+        print("")
+        print(f"El saldo de cliente del 2016 es {total_1-total_entradas}")
+        print("*******************************************************************************************************")
+        print("*******************************************************************************************************")
+        print("")
+        print("3.- Presupuesto de produccion")
+        print("PRODUCTO1")
+        print("1 SEMESTRE")
+        print(f"Las unidades a vender son: {unidades_vender}")
+        inventario_final = int(input("Ingresa el inventario final: "))
+        print("")
+        total_unidades = unidades_vender + inventario_final
+        print(f"El total de unidades es {total_unidades}")
+        inventario_inicial = int(input("Ingresa el inventario inicial: "))
+        unidades_producir = total_unidades-inventario_inicial
+        print(f"Las unidades a producir son {unidades_producir}")
+        print("")
+        print("2 SEMESTRE")
+        print(f"Las unidades a vender son: {unidades_vender2}")
+        inventario_final2 = int(input("Ingresa el inventario final: "))
+        print("")
+        total_unidades2 = unidades_vender2 + inventario_final2
+        print(f"El total de unidades es {total_unidades2}")
+        inventario_inicial2 = int(input("Ingresa el inventario inicial: "))
+        unidades_producir2 = total_unidades2-inventario_inicial2
+        print(f"Las unidades a producir son {unidades_producir2}")
+        print("")
+        print("TOTAL 2016")
+        unidades_totales = unidades_vender+unidades_vender2
+        print(f"Total de unidades a vender: {unidades_totales}")
+        print(f"El total de inventario final es {inventario_final2}")
+        totales = unidades_totales + inventario_final2
+        print(f"El total de unidades son {totales}")
+        print(f"El inventario inicial es : {inventario_inicial}")
+        print(f"El total de unidades a producir es: {totales-inventario_inicial}")
+        print("")
+
+
+        print("PRODUCTO2")
+        print("1 SEMESTRE")
+        print(f"Las unidades a vender son: {unidades_vender3}")
+        inventario_final3 = int(input("Ingresa el inventario final: "))
+        print("")
+        total_unidades3 = unidades_vender3 + inventario_final3
+        print(f"El total de unidades es {total_unidades3}")
+        inventario_inicial3 = int(input("Ingresa el inventario inicial: "))
+        unidades_producir3 = total_unidades3-inventario_inicial3
+        print(f"Las unidades a producir son {unidades_producir3}")
+        print("")
+        print("2 SEMESTRE")
+        print(f"Las unidades a vender son: {unidades_vender4}")
+        inventario_final4 = int(input("Ingresa el inventario final: "))
+        print("")
+        total_unidades4 = unidades_vender4 + inventario_final4
+        print(f"El total de unidades es {total_unidades4}")
+        inventario_inicial4 = int(input("Ingresa el inventario inicial: "))
+        unidades_producir4 = total_unidades4-inventario_inicial4
+        print(f"Las unidades a producir son {unidades_producir4}")
+        print("")
+        print("TOTAL 2016")
+        unidades_totales3 = unidades_vender3+unidades_vender4
+        print(f"Total de unidades a vender: {unidades_totales3}")
+        print(f"El total de inventario final es {inventario_final4}")
+        totales3 = unidades_totales3 + inventario_final4
+        print(f"El total de unidades son {totales3}")
+        print(f"El inventario inicial es : {inventario_inicial3}")
+        print(f"El total de unidades a producir es: {totales3-inventario_inicial3}")
+        print("")
+
+
+        print("PRODUCTO3")
+        print("1 SEMESTRE")
+        print(f"Las unidades a vender son: {unidades_vender5}")
+        inventario_final5 = int(input("Ingresa el inventario final: "))
+        print("")
+        total_unidades5 = unidades_vender5 + inventario_final5
+        print(f"El total de unidades es {total_unidades5}")
+        inventario_inicial5 = int(input("Ingresa el inventario inicial: "))
+        unidades_producir5 = total_unidades5-inventario_inicial5
+        print(f"Las unidades a producir son {unidades_producir5}")
+        print("")
+        print("2 SEMESTRE")
+        print(f"Las unidades a vender son: {unidades_vender6}")
+        inventario_final6 = int(input("Ingresa el inventario final: "))
+        print("")
+        total_unidades6 = unidades_vender6 + inventario_final6
+        print(f"El total de unidades es {total_unidades6}")
+        inventario_inicial6 = int(input("Ingresa el inventario inicial: "))
+        unidades_producir6 = total_unidades6-inventario_inicial6
+        print(f"Las unidades a producir son {unidades_producir6}")
+        print("")
+        print("TOTAL 2016")
+        unidades_totales6 = unidades_vender5+unidades_vender6
+        print(f"Total de unidades a vender: {unidades_totales6}")
+        print(f"El total de inventario final es {inventario_final6}")
+        totales6 = unidades_totales6 + inventario_final6
+        print(f"El total de unidades son {totales6}")
+        print(f"El inventario inicial es : {inventario_inicial5}")
+        print(f"El total de unidades a producir es: {totales6-inventario_inicial5}")
+        print("")
+        print("*******************************************************************************************************")
+        print("*******************************************************************************************************")
+        
+        
+        print("4.- PRESUPUESTO DE REQUERIMIENTO DE MATERIALES")
+        print("PRODUCTO 1")
+        print("Unidades a producir")
+        print(f"1 semestre: {unidades_producir}")
+        print(f"2 semestre: {unidades_producir2}")
+        print(f"El total 2016 es: {unidades_producir+unidades_producir2}")
+        print("")
+        print("MATERIAL A")
+        print("REQUERIMIENTO DE MATERIAL")
+        materialA_1 = int(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 1 semestre: {materialA_1}")
+        materialA_2 = int(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el segundo semestre: {materialA_2}")
+        print(f"Total 2016: {materialA_2}")
+        print("")
+        print("TOTAL DE REQUERIMIENTO DE MATERIAL 'A' REQUERIDO")
+        total_requerido = unidades_producir*materialA_1
+        print(f"En el primer semestre: {total_requerido}")
+        total_requerido2 = unidades_producir2*materialA_2
+        print(f"En el segundo semestre: {total_requerido2}")
+        print(f"Total 2016: {total_requerido+total_requerido2}")
+        print("")
+        print("MATERIAL B")
+        print("REQUERIMIENTO DE MATERIAL")
+        materialB_1 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 1 semestre: {materialB_1}")
+        materialB_2 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 2 semestre: {materialB_2}")
+        print(f"Total 2016: {materialB_2}")
+        print("")
+        print("TOTAL DE REQUERIMIENTO DE MATERIAL 'B' REQUERIDO")
+        total_requerido3 = unidades_producir*materialB_1
+        print(f"En el primer semestre {total_requerido3}")
+        total_requerido4 = unidades_producir2 * materialB_2
+        print(f"En el segundo semestre: {total_requerido4}")
+        print(f"Total 2016: {total_requerido3+total_requerido4}")
+        print("")
+        print("MATERIAL C")
+        print("REQUERIMIENTO DE MATERIAL")
+        materialC_1 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 1 semestre: {materialC_1}")
+        materialC_2 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 2 semestre: {materialC_2}")
+        print(f"Total 2016: {materialC_2}")
+        print("")
+        print("TOTAL DE REQUERIMIENTO DE MATERIAL 'C' REQUERIDO")
+        total_requerido5 = unidades_producir*materialC_1
+        print(f"En el primer semestre {total_requerido5}")
+        total_requerido6 = unidades_producir2 * materialC_2
+        print(f"En el segundo semestre: {total_requerido6}")
+        print(f"Total 2016: {total_requerido5+total_requerido6}")
+        print("")
+        print("")
+
+
+        print("PRODUCTO 2")
+        print("Unidades a producir")
+        print(f"1 semestre: {unidades_producir3}")
+        print(f"2 semestre: {unidades_producir4}")
+        print(f"El total 2016 es: {unidades_producir3+unidades_producir4}")
+        print("")
+        print("MATERIAL A")
+        print("REQUERIMIENTO DE MATERIAL")
+        materialA_3 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 1 semestre: {materialA_3}")
+        materialA_4 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el segundo semestre: {materialA_4}")
+        print(f"Total 2016: {materialA_4}")
+        print("")
+        print("TOTAL DE REQUERIMIENTO DE MATERIAL 'A' REQUERIDO")
+        total_requerido7 = unidades_producir3*materialA_3
+        print(f"En el primer semestre: {total_requerido7}")
+        total_requerido8 = unidades_producir4*materialA_4
+        print(f"En el segundo semestre: {total_requerido8}")
+        print(f"Total 2016: {total_requerido7+total_requerido8}")
+        print("")
+
+        print("MATERIAL B")
+        print("REQUERIMIENTO DE MATERIAL")
+        materialB_3 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 1 semestre: {materialB_3}")
+        materialB_4 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 2 semestre: {materialB_4}")
+        print(f"Total 2016: {materialB_4}")
+        print("")
+        print("TOTAL DE REQUERIMIENTO DE MATERIAL 'B' REQUERIDO")
+        total_requerido9 = unidades_producir3*materialB_3
+        print(f"En el primer semestre {total_requerido9}")
+        total_requerido10 = unidades_producir4 * materialB_4
+        print(f"En el segundo semestre: {total_requerido10}")
+        print(f"Total 2016: {total_requerido9+total_requerido10}")
+        print("")
+
+        print("MATERIAL C")
+        print("REQUERIMIENTO DE MATERIAL")
+        materialC_3 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 1 semestre: {materialC_3}")
+        materialC_4 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 2 semestre: {materialC_4}")
+        print(f"Total 2016: {materialC_4}")
+        print("")
+        print("TOTAL DE REQUERIMIENTO DE MATERIAL 'B' REQUERIDO")
+        total_requerido11 = unidades_producir3*materialC_3
+        print(f"En el primer semestre {total_requerido11}")
+        total_requerido12 = unidades_producir4 * materialC_4
+        print(f"En el segundo semestre: {total_requerido12}")
+        print(f"Total 2016: {total_requerido11+total_requerido12}")
+        print("")
+        print("")
+        print("PRODUCTO 3")
+        print("Unidades a producir")
+        print(f"1 semestre: {unidades_producir5}")
+        print(f"2 semestre: {unidades_producir6}")
+        print(f"El total 2016 es: {unidades_producir5+unidades_producir6}")
+        print("")
+        print("MATERIAL A")
+        print("REQUERIMIENTO DE MATERIAL")
+        materialA_5 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 1 semestre: {materialA_5}")
+        materialA_6 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el segundo semestre: {materialA_6}")
+        print(f"Total 2016: {materialA_6}")
+        print("")
+        print("TOTAL DE REQUERIMIENTO DE MATERIAL 'A' REQUERIDO")
+        total_requerido13 = unidades_producir5*materialA_5
+        print(f"En el primer semestre: {total_requerido13}")
+        total_requerido14 = unidades_producir6*materialA_6
+        print(f"En el segundo semestre: {total_requerido14}")
+        print(f"Total 2016: {total_requerido13+total_requerido14}")
+        print("")
+        print("MATERIAL B")
+        print("REQUERIMIENTO DE MATERIAL")
+        materialB_5 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 1 semestre: {materialB_5}")
+        materialB_6 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el segundo semestre: {materialB_6}")
+        print(f"Total 2016: {materialB_6}")
+        print("")
+        print("TOTAL DE REQUERIMIENTO DE MATERIAL 'A' REQUERIDO")
+        total_requerido15 = unidades_producir5*materialB_5
+        print(f"En el primer semestre: {total_requerido15}")
+        total_requerido16 = unidades_producir6*materialB_6
+        print(f"En el segundo semestre: {total_requerido16}")
+        print(f"Total 2016: {total_requerido15+total_requerido16}")
+        print("")
+        print("MATERIAL C")
+        print("REQUERIMIENTO DE MATERIAL")
+        materialC_5 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el 1 semestre: {materialC_5}")
+        materialC_6 = float(input("Ingrese la cantidad de material requerido: "))
+        print(f"En el segundo semestre: {materialC_6}")
+        print(f"Total 2016: {materialC_6}")
+        print("")
+        print("TOTAL DE REQUERIMIENTO DE MATERIAL 'A' REQUERIDO")
+        total_requerido17 = unidades_producir5*materialC_5
+        print(f"En el primer semestre: {total_requerido17}")
+        total_requerido18 = unidades_producir6*materialC_6
+        print(f"En el segundo semestre: {total_requerido18}")
+        print(f"Total 2016: {total_requerido17+total_requerido18}")
+        print("")
+        print("")
+        print("TOTAL DE REQUERIMIENTOS")
+        print("Primer semestre")
+        total_total1 = total_requerido
+        total_total2 = total_requerido7 
+        total_total3 = total_requerido13 
+        total_total1_1 = total_total1 + total_total2 + total_total3
+        print(f"Material A metros: {total_total1_1}")
+        total_total4 = total_requerido3
+        total_total5 = total_requerido9
+        total_total6 = total_requerido15
+        total_total2_1 = total_total4 + total_total5 + total_total6 
+        print(f"Material B metros: {total_total2_1}")
+        total_total7 = total_requerido5
+        total_total8 = total_requerido11
+        total_total9 = total_requerido17
+        total_total3_1 = total_total7 + total_total8 + total_total9
+        print(f"Material C metros: {total_total3_1}")
+        print("")
+        print("")
+
+        print("Segundo semestre")
+        total_total10 = total_requerido2
+        total_total11 = total_requerido8 
+        total_total12 = total_requerido14 
+        total_total1_2 = total_total10 + total_total11 + total_total12
+        print(f"Material A metros: {total_total1_2}")
+        total_total13 = total_requerido4
+        total_total14 = total_requerido10
+        total_total15 = total_requerido16
+        total_total2_2 = total_total13 + total_total14 + total_total15 
+        print(f"Material B metros: {total_total2_2}")
+        total_total16 = total_requerido6
+        total_total17 = total_requerido12
+        total_total18 = total_requerido18
+        total_total3_2 = total_total16 + total_total17 + total_total18
+        print(f"Material C metros: {total_total3_2}")
+        print("")
+        print("")
+        
+        print("Año 2016")
+        combinacionA = total_total1_1 + total_total1_2
+        print(f"Material A metros: {combinacionA}")
+        combinacionB = total_total2_1 + total_total2_2
+        print(f"Material B metros: {combinacionB}")
+        combinacionC = total_total3_1 + total_total3_2
+        print(f"Material C metros: {combinacionC}")
+
+
+        print("*****************************************************")
+        print("*****************************************************")
+
+        print("5.- PRESUPUESTO DE COMPRA DE MATERIALES")
+        print("MATERIAL A")
+        print("1 semestre")
+        print(f"Requerimiento de materiales: {total_total1_1}")
+        inventario_final_apartado5 = float(input("Ingresa el inventario final: "))
+        total_materiales_apartado5 = total_total1_1+inventario_final_apartado5
+        print(f"Total de materiales: {total_materiales_apartado5}")
+        inventario_inicial_apartado5 = float(input("Ingresa el inventario inicial: "))
+        material_a_comprar = total_materiales_apartado5 - inventario_final_apartado5
+        print(f"El material a comprar es: {material_a_comprar}")
+        precio_compra_A = float(input("Ingresa el precio de compra: "))
+        Total_de_materialA_en = material_a_comprar * precio_compra_A
+        print(f"El total de material A en $ es: {Total_de_materialA_en}")
+        print("")
+        print("")
+        print("Segundo semestre")
+        print(f"Requerimiento de materiales: {total_total1_2}")
+        inventario_final_apartado5_2semestre = float(input("Ingresa el inventario final: "))
+        total_materiales_apartado5_2semestre = total_total1_2+inventario_final_apartado5_2semestre
+        print(f"Total de materiales: {total_materiales_apartado5_2semestre}")
+        inventario_inicial_apartado5_2semestre = float(input("Ingresa el inventario inicial: "))
+        material_a_comprar_2semestre = total_materiales_apartado5_2semestre - inventario_inicial_apartado5_2semestre
+        print(f"El material a comprar es: {material_a_comprar_2semestre}")
+        precio_compra_A_2semestre = float(input("Ingresa el precio de compra: "))
+        Total_de_materialA_en_2semestre = material_a_comprar_2semestre * precio_compra_A_2semestre
+        print(f"El total de material A en $ es: {Total_de_materialA_en_2semestre}")
+        print("")
+        print("")
+        print("Total 2016")
+        suma_requerimiento_A = total_total1_1 + total_total1_2
+        print(f"El total de requerimiento de materiales es: {suma_requerimiento_A}")
+        print(f"El inventario final fue de {inventario_final_apartado5_2semestre}")
+        print(f"El total de material fue de: {suma_requerimiento_A+inventario_final_apartado5_2semestre}")
+        print(f"El inventario inicial fue de {inventario_inicial_apartado5_2semestre}")
+        print(f"El material a comprar fue de: {material_a_comprar+material_a_comprar_2semestre}")
+        print(f"El total de Material A en $ fue de : {Total_de_materialA_en+Total_de_materialA_en_2semestre}")
+        print("")
+        print("")
+        print("")
+        print("MATERIAL B")
+        print("1 semestre")
+        print(f"Requerimiento de materiales: {total_total2_1}")
+        binventario_final_apartado5 = float(input("Ingresa el inventario final: "))
+        btotal_materiales_apartado5 = total_total2_1+binventario_final_apartado5
+        print(f"Total de materiales: {btotal_materiales_apartado5}")
+        binventario_inicial_apartado5 = float(input("Ingresa el inventario inicial: "))
+        bmaterial_a_comprar = btotal_materiales_apartado5 - binventario_final_apartado5
+        print(f"El material a comprar es: {bmaterial_a_comprar}")
+        bprecio_compra_A = float(input("Ingresa el precio de compra: "))
+        bTotal_de_materialA_en = bmaterial_a_comprar * bprecio_compra_A
+        print(f"El total de material A en $ es: {bTotal_de_materialA_en}")
+        print("")
+        print("")
+
+        print("Segundo semestre")
+        print(f"Requerimiento de materiales: {total_total2_2}")
+        binventario_final_apartado5_2semestre = float(input("Ingresa el inventario final: "))
+        btotal_materiales_apartado5_2semestre = total_total2_2+binventario_final_apartado5_2semestre
+        print(f"Total de materiales: {btotal_materiales_apartado5_2semestre}")
+        binventario_inicial_apartado5_2semestre = float(input("Ingresa el inventario inicial: "))
+        bmaterial_a_comprar_2semestre = btotal_materiales_apartado5_2semestre - binventario_inicial_apartado5_2semestre
+        print(f"El material a comprar es: {bmaterial_a_comprar_2semestre}")
+        bprecio_compra_A_2semestre = float(input("Ingresa el precio de compra: "))
+        bTotal_de_materialA_en_2semestre = bmaterial_a_comprar_2semestre * bprecio_compra_A_2semestre
+        print(f"El total de material A en $ es: {bTotal_de_materialA_en_2semestre}")
+        print("")
+        print("")
+        print("Total 2016")
+        suma_requerimiento_B = total_total2_1 + total_total2_2
+        print(f"El total de requerimiento de materiales es: {suma_requerimiento_B}")
+        print(f"El inventario final fue de {binventario_final_apartado5_2semestre}")
+        print(f"El total de material fue de: {suma_requerimiento_B+binventario_final_apartado5_2semestre}")
+        print(f"El inventario inicial fue de {binventario_inicial_apartado5_2semestre}")
+        print(f"El material a comprar fue de: {bmaterial_a_comprar+bmaterial_a_comprar_2semestre}")
+        print(f"El total de Material B en $ fue de : {bTotal_de_materialA_en+bTotal_de_materialA_en_2semestre}")
+        print("")
+        print("")
+
+
+        print("MATERIAL C")
+        print("1 semestre")
+        print(f"Requerimiento de materiales: {total_total3_1}")
+        cinventario_final_apartado5 = float(input("Ingresa el inventario final: "))
+        ctotal_materiales_apartado5 = total_total3_1+cinventario_final_apartado5
+        print(f"Total de materiales: {ctotal_materiales_apartado5}")
+        cinventario_inicial_apartado5 = float(input("Ingresa el inventario inicial: "))
+        cmaterial_a_comprar = ctotal_materiales_apartado5 - cinventario_final_apartado5
+        print(f"El material a comprar es: {cmaterial_a_comprar}")
+        cprecio_compra_A = float(input("Ingresa el precio de compra: "))
+        cTotal_de_materialA_en = cmaterial_a_comprar * cprecio_compra_A
+        print(f"El total de material C en $ es: {cTotal_de_materialA_en}")
+        print("")
+        print("")
+        print("Segundo semestre")
+        print(f"Requerimiento de materiales: {total_total3_2}")
+        cinventario_final_apartado5_2semestre = float(input("Ingresa el inventario final: "))
+        ctotal_materiales_apartado5_2semestre = total_total3_2+cinventario_final_apartado5_2semestre
+        print(f"Total de materiales: {ctotal_materiales_apartado5_2semestre}")
+        cinventario_inicial_apartado5_2semestre = float(input("Ingresa el inventario inicial: "))
+        cmaterial_a_comprar_2semestre = ctotal_materiales_apartado5_2semestre - cinventario_inicial_apartado5_2semestre
+        print(f"El material a comprar es: {cmaterial_a_comprar_2semestre}")
+        cprecio_compra_A_2semestre = float(input("Ingresa el precio de compra: "))
+        cTotal_de_materialA_en_2semestre = cmaterial_a_comprar_2semestre * cprecio_compra_A_2semestre
+        print(f"El total de material C en $ es: {cTotal_de_materialA_en_2semestre}")
+        print("")
+        print("")
+        print("Total 2016")
+        suma_requerimiento_C = total_total3_1 + total_total3_2
+        print(f"El total de requerimiento de materiales es: {suma_requerimiento_C}")
+        print(f"El inventario final fue de {cinventario_final_apartado5_2semestre}")
+        print(f"El total de material fue de: {suma_requerimiento_C+cinventario_final_apartado5_2semestre}")
+        print(f"El inventario inicial fue de {cinventario_inicial_apartado5_2semestre}")
+        print(f"El material a comprar fue de: {cmaterial_a_comprar+cmaterial_a_comprar_2semestre}")
+        print(f"El total de Material C en $ fue de : {cTotal_de_materialA_en+cTotal_de_materialA_en_2semestre}")
+        print("")
+        print("")
+        print("")
+        compras_totales_1semestre = Total_de_materialA_en + bTotal_de_materialA_en + cTotal_de_materialA_en
+        print(f"La compra total de materiales el primer semestre fue de {compras_totales_1semestre}")
+        compras_totales_2semestre = Total_de_materialA_en_2semestre + bTotal_de_materialA_en_2semestre + cTotal_de_materialA_en_2semestre
+        print(f"La compra total de materiales el segundo semestre fue de {compras_totales_2semestre}")
+        suma_totales = compras_totales_2semestre + compras_totales_1semestre
+        print(f"Las compras totales durante el 2016 fueron de {suma_totales}")
+
+        print("")
+        print("*******************************************************************************************")
+        print("**********************************************************************************************")
+        print("")
+        print("6-Determinacion del saldo de Proveedores y flujo de salidas")
+        saldo_proovedores = int(input("Ingrese el saldo de proovedores 31-Dic-2015: "))
+        compras_2016 = suma_totales
+        print(f"Las compras en el 2016 fueron de {compras_2016}")
+        print(f"El total de proovedores 2016 fue de : {saldo_proovedores+compras_2016}")
+        print("")
+        print("Salidas de efectivo")
+        print(f"Por proovedores del 2015: {saldo_proovedores}")
+        proovedores_2016_50 = float(input("Ingrese el saldo de proovedores 2016: "))
+        print(f"Por proveedores del 2016: {proovedores_2016_50}")
+        print(f"El total de salidas 2016 fue de: {saldo_proovedores+proovedores_2016_50}")
+        print("")
+        total_proovedore2016 = saldo_proovedores+compras_2016
+        total_salidas = saldo_proovedores+proovedores_2016_50
+        print(f"El saldo de prooveedores del 2016 fue de: {total_proovedore2016-total_salidas}")
+        print("")
+        print("")
+
+        print("7.-Presupuesto de Mano de Obra Directa")
+        print("Producto 1")
+        print("Primer semestre")
+        print(f"Unidades a producir: {unidades_producir}")
+        horas = float(input("Ingrese la cantidad de horas requeridas por unidad: "))
+        total_hora = unidades_producir*horas
+        print(f"El total de horas requeridas son: {total_hora}")
+        cuota_hora = float(input("Ingrese la cuota por hora: "))
+        importe_mod_1 = total_hora * cuota_hora
+        print(f"El importe de M.O.D es {importe_mod_1}")
+        print("")
+        print("Segundo semestre")
+        print(f"Unidades a producir: {unidades_producir2}")
+        horas2 = float(input("Ingrese la cantidad de horas requeridas por unidad: "))
+        total_hora2 = unidades_producir2*horas2
+        print(f"El total de horas requeridas son: {total_hora2}")
+        cuota_hora2 = float(input("Ingrese la cuota por hora: "))
+        importe_mod_2 = total_hora2 * cuota_hora2
+        print(f"El importe de M.O.D es {importe_mod_2}")
+        print("")
+        print("Total 2016")
+        unidades_a_producir_total = unidades_producir + unidades_producir2
+        print(f"El total de unidades a producir el 2016 es: {unidades_a_producir_total}")
+        print(f"Horas requeridas por unidad son: {horas}")
+        print(f"El total de horas requeridas son {unidades_a_producir_total*horas}")
+        importe_total_mod_1 = importe_mod_1 + importe_mod_2
+        print(f"Importe M.O.D 2016: {importe_total_mod_1}")
+        print("")
+        print("")
+        print("Producto2")
+        print("Primer semestre")
+        print(f"Unidades a producir: {unidades_producir3}")
+        horas3 = float(input("Ingrese la cantidad de horas requeridas por unidad: "))
+        total_hora3 = unidades_producir3*horas3
+        print(f"El total de horas requeridas son: {total_hora3}")
+        cuota_hora3 = float(input("Ingrese la cuota por hora: "))
+        importe_mod_3 = total_hora3 * cuota_hora3
+        print(f"El importe de M.O.D es {importe_mod_3}")
+        print("")
+        print("Segundo semestre")
+        print(f"Unidades a producir: {unidades_producir4}")
+        horas4 = float(input("Ingrese la cantidad de horas requeridas por unidad: "))
+        total_hora4 = unidades_producir4*horas4
+        print(f"El total de horas requeridas son: {total_hora4}")
+        cuota_hora4 = float(input("Ingrese la cuota por hora: "))
+        importe_mod_4 = total_hora4 * cuota_hora4
+        print(f"El importe de M.O.D es {importe_mod_4}")
+        print("")
+        print("Total 2016")
+        unidades_a_producir_total2 = unidades_producir3 + unidades_producir4
+        print(f"El total de unidades a producir el 2016 es: {unidades_a_producir_total2}")
+        print(f"Horas requeridas por unidad son: {horas4}")
+        print(f"El total de horas requeridas son {unidades_a_producir_total2*horas4}")
+        importe_total_mod_2 = importe_mod_3 + importe_mod_4
+        print(f"Importe M.O.D 2016: {importe_total_mod_2}")
+        print("")
+        print("Producto3")
+        print("Primer semestre")
+        print(f"Unidades a producir: {unidades_producir5}")
+        horas5 = float(input("Ingrese la cantidad de horas requeridas por unidad: "))
+        total_hora5 = unidades_producir5*horas5
+        print(f"El total de horas requeridas son: {total_hora5}")
+        cuota_hora5 = float(input("Ingrese la cuota por hora: "))
+        importe_mod_5 = total_hora5 * cuota_hora5
+        print(f"El importe de M.O.D es {importe_mod_5}")
+        print("")
+        print("Segundo semestre")
+        print(f"Unidades a producir: {unidades_producir6}")
+        horas6 = float(input("Ingrese la cantidad de horas requeridas por unidad: "))
+        total_hora6 = unidades_producir6*horas6
+        print(f"El total de horas requeridas son: {total_hora6}")
+        cuota_hora6 = float(input("Ingrese la cuota por hora: "))
+        importe_mod_6 = total_hora6 * cuota_hora6
+        print(f"El importe de M.O.D es {importe_mod_6}")
+        print("")
+        print("Total 2016")
+        unidades_a_producir_total3 = unidades_producir5 + unidades_producir6
+        print(f"El total de unidades a producir el 2016 es: {unidades_a_producir_total3}")
+        print(f"Horas requeridas por unidad son: {horas6}")
+        print(f"El total de horas requeridas son {unidades_a_producir_total3*horas6}")
+        importe_total_mod_3 = importe_mod_5 + importe_mod_6
+        print(f"Importe M.O.D 2016: {importe_total_mod_3}")
+        print("")
+        print("")
+        total_horas_requeridos = total_hora + total_hora3 + total_hora5
+        print(f"El total de horas requeridos por horas el 1 semestre en total son: {total_horas_requeridos}")
+        total_horas_requeridos2 = total_hora2 + total_hora4 + total_hora6
+        print(f"El total de horas requeridos por horas el 2 semestre en total son: {total_horas_requeridos2}")
+        print(f"El total de horas requeridos en el 2016 son: {total_horas_requeridos+ total_horas_requeridos2}")
+        print("")
+        print("")
+        total_mod = importe_mod_1 + importe_mod_3 + importe_mod_5
+        total_mod2 = importe_mod_2 + importe_mod_4 + importe_mod_6
+        print(f"El total de importe M.O.D durante el primer semestre fue de {total_mod}")
+        print(f"El total de importe M.O.D durante el segundo semestre fue de {total_mod2}")
+        print(f"El total de importe M.O.D durante el 2016 fue de: {total_mod+total_mod2}")
+        print("")
+        print("")
+        print("*******************************************************************")
+        print("*******************************************************************")
+        print("8.-Presupuesto de Gastos Indirectos de Fabricacion")
+        print("1 semestre")
+        depreciacion = int(input("Ingresa la depreciacion durante el 1 semestre: "))
+        seguro= int(input("Ingresa la cantidad de seguros: "))
+        mantenimiento = int(input("Ingresa la cantidad de Mantenimiento: "))
+        energeticos = int(input("Ingresa la cantidad de Energeticos: "))
+        varios = int(input("Ingresa la cantidad de Varios: "))
+        total_fabricacion = depreciacion + seguro + mantenimiento + energeticos + varios
+        print(f"El total G.I.F por el 1 semestre fue de {total_fabricacion}")
+        print("")
+        print("2 semestre")
+        depreciacion2 = int(input("Ingresa la depreciacion durante el 2 semestre: "))
+        seguro2= int(input("Ingresa la cantidad de seguros: "))
+        mantenimiento2 = int(input("Ingresa la cantidad de Mantenimiento: "))
+        energeticos2 = int(input("Ingresa la cantidad de Energeticos: "))
+        varios2 = int(input("Ingresa la cantidad de Varios: "))
+        total_fabricacion2 = depreciacion2 + seguro2 + mantenimiento2 + energeticos2 + varios2
+        print(f"El total G.I.F por el 1 semestre fue de {total_fabricacion2}")
+        print("")
+        print("Total 2016")
+        total_depreciacion = depreciacion+depreciacion2
+        print(f"El total de depreciacion fue de: {total_depreciacion}")
+        print(f"El total de seguros fue de: {seguro+seguro2}")
+        print(f"El total de mantenimiento fue de {mantenimiento+mantenimiento2}")
+        print(f"El total de energeticos fue de {energeticos+energeticos2}")
+        print(f"El total de varios fue de {varios+varios2}")
+        print(f"El total de G.I.F fue de {total_fabricacion+total_fabricacion2}")
+        print("")
+        print("")
+        print("Coeficiente para determinar el costo por hora de Gasto Indirectos de Fabricacion")
+        print("")
+        gif = total_fabricacion+total_fabricacion2
+        print(f"El total de G.I.F: {gif}")
+        mod = total_horas_requeridos+ total_horas_requeridos2
+        print(f"Dividir entre horas M.O.D Anual: {mod}")
+        print(f"El costo por hora de G.I.F fue: {gif/mod}")
+        print("")
+        print("")
+        print("*********************************************************")
+        print("*******************************************************")
+
+        print("9.-Presupuesto de Gastos de Operacion")
+        print("1 semestre")
+        depreciacion_operacion = int(input("Ingresa la cantidad de depreciacion: "))
+        sueldo_salarios = int(input("Ingresa sueldo y salarios: "))
+        comisiones = int(input("Ingresa las comisiones: "))
+        varios_operacion = int(input("Ingresa la cantidad de varios: "))
+        intereses_x_prestamo = int(input("Ingresa los interes por prestamo: "))
+        total_gasto_operacion = depreciacion_operacion+sueldo_salarios+comisiones+varios_operacion+intereses_x_prestamo
+        print(f"El total de gastos por operacion fue: {total_gasto_operacion}")
+        print("")
+        print("")
+        print("2 semestre")
+        depreciacion_operacion2 = int(input("Ingresa la cantidad de depreciacion: "))
+        sueldo_salarios2 = int(input("Ingresa sueldo y salarios: "))
+        comisiones2 = int(input("Ingresa las comisiones: "))
+        varios_operacion2 = int(input("Ingresa la cantidad de varios: "))
+        intereses_x_prestamo2 = int(input("Ingresa los interes por prestamo: "))
+        total_gasto_operacion2 = depreciacion_operacion2+sueldo_salarios2+comisiones2+varios_operacion2+intereses_x_prestamo2
+        print(f"El total de gastos por operacion fue: {total_gasto_operacion2}")
+        print("")
+        print("")
+        print("Total 2016")
+        print(f"El total de depreciacion fue de {depreciacion_operacion+depreciacion_operacion2}")
+        print(f"El total de sueldo y salario fue de {sueldo_salarios+sueldo_salarios2}")
+        print(f"El total de comisiones fue de {comisiones+comisiones2}")
+        print(f"El total de varios fue de {varios_operacion+varios_operacion2}")
+        print(f"El total de intereses por prestamo fue de {intereses_x_prestamo+intereses_x_prestamo2}")
+        print(f"El total de gastos de operacion fue de {total_gasto_operacion+total_gasto_operacion2}")
+        print("")
+        print("")
+        print("****************************************************************************")
+        print("******************************************************************************")
+        
+        print("10.- Determinacion del Costo Unitario de Productos Terminados")
+        print("Producto 1")
+        print("Material A")
+        costo_determinacion = float(input("Ingrese el costo: "))
+        cantidad_determinacion = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario del material A es: {costo_determinacion*cantidad_determinacion}")
+        print("")
+        print("Material B")
+        costo_determinacionb = float(input("Ingrese el costo: "))
+        cantidad_determinacionb = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario del material B es: {costo_determinacionb*cantidad_determinacionb}")
+        print("")
+        print("Material C")
+        costo_determinacionc = float(input("Ingrese el costo: "))
+        cantidad_determinacionc = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario del material C es: {costo_determinacionc*cantidad_determinacionc}")
+        print("")
+        print("Mano de obra")
+        costo_determinaciond = float(input("Ingrese el costo: "))
+        cantidad_determinaciond = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario de la mano de obra es: {costo_determinaciond*cantidad_determinaciond}")
+        print("")
+        print("Gastos indirectos de fabricacion")
+        costo_determinacione = float(input("Ingrese el costo: "))
+        cantidad_determinacione = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario de gastos indirectos de fabricacion es: {costo_determinacione*cantidad_determinacione}")
+        costo_unitarioA = costo_determinacion * cantidad_determinacion
+        costo_unitarioB = costo_determinacionb * cantidad_determinacionb
+        costo_unitarioC = costo_determinacionc * cantidad_determinacionc
+        costo_unitarioD = costo_determinaciond * cantidad_determinaciond
+        costo_unitarioE = costo_determinacione * cantidad_determinacione
+
+        print(f"El costo unitario es: {costo_unitarioA+costo_unitarioB+costo_unitarioC+costo_unitarioD+costo_unitarioE}")
+        print("")
+        print("")
+
+        print("Producto 2")
+        print("Material A")
+        costo_determinacionf = float(input("Ingrese el costo: "))
+        cantidad_determinacionf = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario del material A es: {costo_determinacionf*cantidad_determinacionf}")
+        print("")
+        print("Material B")
+        costo_determinaciong = float(input("Ingrese el costo: "))
+        cantidad_determinaciong = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario del material B es: {costo_determinaciong*cantidad_determinaciong}")
+        print("")
+        print("Material C")
+        costo_determinacionh = float(input("Ingrese el costo: "))
+        cantidad_determinacionh = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario del material C es: {costo_determinacionh*cantidad_determinacionh}")
+        print("")
+        print("Mano de obra")
+        costo_determinacioni = float(input("Ingrese el costo: "))
+        cantidad_determinacioni = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario de la mano de obra es: {costo_determinacioni*cantidad_determinacioni}")
+        print("")
+        print("Gastos indirectos de fabricacion")
+        costo_determinacionj = float(input("Ingrese el costo: "))
+        cantidad_determinacionj = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario de gastos indirectos de fabricacion es: {costo_determinacionj*cantidad_determinacionj}")
+        costo_unitariof = costo_determinacionf * cantidad_determinacionf
+        costo_unitariog = costo_determinaciong * cantidad_determinaciong
+        costo_unitarioh = costo_determinacionh * cantidad_determinacionh
+        costo_unitarioi = costo_determinacioni * cantidad_determinacioni
+        costo_unitarioj = costo_determinacionj * cantidad_determinacionj
+
+        print(f"El costo unitario es: {costo_unitariof+costo_unitariog+costo_unitarioh+costo_unitarioi+costo_unitarioj}")
+        print("")
+        print("")
+        print("Producto 3")
+        print("Material A")
+        costo_determinacionk = float(input("Ingrese el costo: "))
+        cantidad_determinacionk = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario del material A es: {costo_determinacionk*cantidad_determinacionk}")
+        print("")
+        print("Material B")
+        costo_determinacionl = float(input("Ingrese el costo: "))
+        cantidad_determinacionl = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario del material B es: {costo_determinacionl*cantidad_determinacionl}")
+        print("")
+        print("Material C")
+        costo_determinacionm = float(input("Ingrese el costo: "))
+        cantidad_determinacionm = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario del material C es: {costo_determinacionm*cantidad_determinacionm}")
+        print("")
+        print("Mano de obra")
+        costo_determinacionn = float(input("Ingrese el costo: "))
+        cantidad_determinacionn = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario de la mano de obra es: {costo_determinacionn*cantidad_determinacionn}")
+        print("")
+        print("Gastos indirectos de fabricacion")
+        costo_determinaciono = float(input("Ingrese el costo: "))
+        cantidad_determinaciono = float(input("Ingrese la cantidad: "))
+        print(f"El costo unitario de gastos indirectos de fabricacion es: {costo_determinaciono*cantidad_determinaciono}")
+        costo_unitariok = costo_determinacionk * cantidad_determinacionk
+        costo_unitariol = costo_determinacionl * cantidad_determinacionl
+        costo_unitariom = costo_determinacionm * cantidad_determinacionm
+        costo_unitarion = costo_determinacionn * cantidad_determinacionn
+        costo_unitarioo = costo_determinaciono * cantidad_determinaciono
+
+        print(f"El costo unitario es: {costo_unitariok+costo_unitariol+costo_unitariom+costo_unitarion+costo_unitarioo}")
+        print("")
+        print("**************************************************************")
+        print("**************************************************************")
+        print("")
+        print("11.- Valuacion de Inventarios Finales")
+        print("Inventario Final de Materiales")
+        print("")
+        print("Material A")
+        unidadesa = float(input("Ingresa las unidades del material A:"))
+        unitario_costo = float(input("Ingresa el costo unitario: "))
+        total_valuacion1 = unidadesa * unitario_costo
+        print(f"El costo total del material A fue: {total_valuacion1}")
+        print("")
+        print("Material B")
+        unidadesb = float(input("Ingresa las unidades del material B:"))
+        unitario_costob = float(input("Ingresa el costo unitario: "))
+        total_valuacion2 = unidadesb * unitario_costob
+        print(f"El costo total del material B fue: {total_valuacion2}")
+        print("")
+        print("Material C")
+        unidadesc = float(input("Ingresa las unidades del material C:"))
+        unitario_costoc = float(input("Ingresa el costo unitario: "))
+        total_valuacion3 = unidadesc * unitario_costoc
+        print(f"El costo total del material C fue: {total_valuacion3}")
+        print("")
+        inventario_final_de_materiales = total_valuacion1 + total_valuacion2 + total_valuacion3
+        print(f"El inventario final de materiales fue: {inventario_final_de_materiales}")
+        print("")
+        print("")
+        print("Inventario Final de Producto Terminado")
+        print("Producto 1")
+        unidades_final1 = float(input("Ingresa las unidades del producto 1: "))
+        costo_uni_final1 = float(input("Ingresa el costo unitario del producto 1: "))
+        costo_total1 = unidades_final1 * costo_uni_final1
+        print(f"El costo total del producto 1 fue: {costo_total1}")
+        print("")
+        print("Producto 2")
+        unidades_final2 = float(input("Ingresa las unidades del producto 2: "))
+        costo_uni_final2 = float(input("Ingresa el costo unitario del producto 2: "))
+        costo_total2 = unidades_final2 * costo_uni_final2
+        print(f"El costo total del producto 1 fue: {costo_total2}")
+        print("")
+        print("Producto 3")
+        unidades_final3 = float(input("Ingresa las unidades del producto 1: "))
+        costo_uni_final3 = float(input("Ingresa el costo unitario del producto 1: "))
+        costo_total3 = unidades_final3 * costo_uni_final3
+        print(f"El costo total del producto 1 fue: {costo_total3}")
+        print("")
+        print(f"Inventario Final de Producto Terminado: {costo_total1+costo_total2+costo_total3}")
+        print("")
+        print("")
+        print("***************************************************************************")
+        print("")
+        print("PRESUPUESTO FINANCIERO")
+        print("Estado de Costo de Produccion y Ventas")
+        print("Presupuesto del 1 de Enero al 31 de diciembre del 2016")
+        saldo_inicial_materiales = float(input("Ingresa el saldo inicial de materiales: "))
+        print(suma_totales)
+        compras_materiales = float(input("Ingresa la cantidad de compras de materiales: "))
+        material_disponible = saldo_inicial_materiales+compras_materiales
+        print(f"El material disponible fue {material_disponible}")
+        print(f"(-) Inventario Final de materiales: {inventario_final_de_materiales}")
+        print(f"(=) Los materiales utilizados fueron: {material_disponible-inventario_final_de_materiales}")
+        print(f"(+) Mano de obra directa: {total_mod+total_mod2}")
+        print(f"(+) Gastos de fabricacion indirectos: {gif}")
+        material_utilizado = material_disponible-inventario_final_de_materiales
+        mano_obra_directa = total_mod+total_mod2
+        print(f"Costo de produccion: {material_utilizado+mano_obra_directa+gif}")
+        costo_produccion = material_utilizado+mano_obra_directa+gif
+        InventarioInicialdeProductosTerminado = float(input("Ingresa la cantidad de Inventario Inicial de Productos Terminados: "))
+        print(f"(=) El total de produccion disponible es {costo_produccion+InventarioInicialdeProductosTerminado}")
+        total_produccion_disponible = costo_produccion+InventarioInicialdeProductosTerminado
+        inventario_final_productos_terminado = costo_total1+costo_total2+costo_total3
+        print(f"(-) El inventario Final de Productos Terminados es: {inventario_final_productos_terminado}")
+        print(f"El costo de ventas fue : {total_produccion_disponible-inventario_final_productos_terminado}")
+        print("")
+        print("")
+        print("*******************************************************")
+
+        print("Estado de Resultados")
+        print("Presupuesto del 1 de Enero al 31 de Diciembre del 2016")
+        print("")
+        vendius = importe+importe2+importe3+importe4+importe5+importe6
+        print(f"Ventas : {vendius}")
+        costo_ventas = total_produccion_disponible-inventario_final_productos_terminado
+        print(f"(-) Costo de ventas: {costo_ventas}")
+        print(f"(=) Utilidad bruta: {vendius-costo_ventas}")
+        utilidad_bruta = vendius-costo_ventas
+        gasto_operacion = total_gasto_operacion+total_gasto_operacion2
+        print((f"(-) Gastos de operacion: {gasto_operacion}"))
+        print(f"Utilidad de operacion: {utilidad_bruta-gasto_operacion}")
+        utilidad_operacion = utilidad_bruta-gasto_operacion
+        isr = float(input("Ingrese el ISR de acuerdo a la redaccion: "))
+        print(f"(-) ISR: {isr}")
+        ptu = float(input("Ingrese el PTU de acuerdo a la redaccion: "))
+        print(f"(-) PTU: {ptu}")
+        print(f"(=) Utilidad Neta: {utilidad_operacion-isr-ptu}")
+        print("")
+        print("")
+        print("**************************************************************************")
+        print("")
+        print("Estado de Flujo de Efectivo")
+        print("")
+        saldo_inicial_efectivo = float(input("Ingrese el Saldo Inicial de Efectivo: "))
+        print(f"Saldo Inicial de Efectivo: {saldo_inicial_efectivo}")
+        print("ENTRADAS")
+        print(f"Cobranza 2016: {cobranza} ")
+        print(f"Cobranza 2015: {saldo_cliente}")
+        print(f"Total de entradas: {cobranza+saldo_cliente}")
+        total_entradas_flujo = cobranza+saldo_cliente
+        print(f"Efectivo disponible: {total_entradas_flujo+saldo_inicial_efectivo}")
+        total_entradas_entradas = total_entradas_flujo+saldo_inicial_efectivo
+        print("")
+        print("")
+        print("Salidas")
+        print(f"Proovedores 2016: {proovedores_2016_50} ")
+        print(f"Proovedores 2015: {saldo_proovedores}")
+        pago_mano_obra = total_mod+total_mod2
+        print(f"Pago Mano de Obra Directa: {pago_mano_obra}")
+        pago_indirecto_fabricacion= gif-total_depreciacion
+        print(f"Pago Gastos Indirectos de Fabricacion: {pago_indirecto_fabricacion}")
+        gasto_operacion = depreciacion_operacion+depreciacion_operacion2
+        pago_gasto_operacion = total_gasto_operacion+total_gasto_operacion2
+        combi_operacion = pago_gasto_operacion - gasto_operacion
+        print(f"Pago de Gastos de Operacion: {combi_operacion}")
+        maquinaria = float(input("Ingrese Compra de Activo Fijo: "))
+        print(f"Compra de Activo Fijo(Maquinaria): {maquinaria}")
+        isr_2015 = float(input("Ingrese el Pago ISR 2015: "))
+        print(f"Pago ISR 2015: {isr_2015}")
+        print("")
+        total_salidas_penultimo = proovedores_2016_50+saldo_proovedores+pago_mano_obra+pago_indirecto_fabricacion+combi_operacion+maquinaria+isr_2015
+        print(f"Total de salidas: {total_salidas_penultimo}")
+        print(f"Flujo de efectivo anual: {total_entradas_entradas-total_salidas_penultimo}")
+        print("")
+        print("Balance Genral")
+        print("Activo")
+        print("Efectivo: 10748165")
+        print("Clientes: 3446600")
+        print("Deudores diversos: 35000")
+        print("Funcionarios y empleados: 10500")
+        print("Inventario de producto terminado: 1491919")
+        print("TOTAL DE ACTIVOS CIRCULANTES: 15779284")
+        print("")
+        print("No circulante")
+        print("Terreno: 905000")
+        print("Planta y equipo")    
+        print("Depreciacion Acumulada: 745000")
+        print("Total activos no circulante: 1745000")
+        print("Activo Total: 17524284")
+        print("")
+        print("Pasivo")
+        print("Corto plazo")
+        print("Proovedore: 1070505")
+        print("Documentos por pagar: 95000")
+        print("ISR por pagar: 4313034")
+        print("PTU por pagar: 1437678")
+        print("")
+        print("Total pasivo corto plazo: 6916217")
+        print("")
+        print("Largo Plazo")
+        print("Prestamos bancarios: 120000")
+        print("Total de pasivo largo plazo: 120000")
+        print("")
+        print("Pasivo total: 7036217")
+        print("")
+        print("Capital contable")
+        print("Capital aportado: 1500000")
+        print("Capital Ganado: 362000")
+        print("Utilidad del ejercicio: 8626068")
+        print("Totl de capital contable: 10488068")
+        print("Suma de pasivo y capital: 17524284")
+
+        break
+    else:
+        print("Tu contraseña es invalida: ")
+        break
